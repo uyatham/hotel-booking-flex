@@ -35,7 +35,7 @@ ul {
 .card {
   background: rgba(255, 255, 255, 0.9);
   max-width: 1000px;
-  padding: 32px 48px;
+  padding: 20px 30px;
   margin: 0 auto;
   border-radius: 4px;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
@@ -53,11 +53,11 @@ h2 {
 }
 
 /* Strip out display: inline-block whitespace */
-.row > * {
+.row>* {
   margin-left: -4px;
 }
 
-.row > *:first-child {
+.row>*:first-child {
   margin-left: 0;
 }
 
