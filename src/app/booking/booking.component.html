@@ -3,14 +3,16 @@
     <nav class="booking-nav">
       <ul>
         <li><a routerLink="/room/check-in">You're Stay</a></li>
-        <li><a routerLink="/room/personal-info">Personal Data</a></li>
+        <li><a routerLink="/room/personal-info">Guests</a></li>
         <li><a routerLink="/room/payment">Payment</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <router-outlet></router-outlet>
+    <div class="form-container">
+      <router-outlet></router-outlet>
+    </div>
     <section class="actions-container">
       <div class="inline-control submit-form next">
         <button type="button" id="submitBtn">Next</button>
