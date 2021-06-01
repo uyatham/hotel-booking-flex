@@ -1,10 +1,15 @@
 .side-nav {
+  height: 100%;
+  background-color: #cfcde6;
+
   ul li {
+    border-bottom: 1px silver solid;
+
     a {
-      background-color: #aeaadb;
+      font-family: 'Roboto', 'Helvetica Neue', sans-serif;
       display: block;
-      text-align: center;
-      padding: 16px;
+      padding: 8px 8px;
+      font-size: 0.9em;
       text-decoration: none;
       cursor: pointer;
       color: black;

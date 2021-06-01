@@ -103,19 +103,6 @@ select {
   margin-right: 0;
 }
 
-.trip-selector {
-  max-width: 400px;
-  margin: 0 auto;
-  padding-bottom: 16px;
-  text-align: center;
-  border-bottom: 1px solid gray;
-}
-
-.trip-selector label {
-  display: inline;
-  margin-right: 16px;
-}
-
 .sign-up {
   vertical-align: bottom;
 }
@@ -141,26 +128,7 @@ footer [class*="col-"] {
   text-align: center;
 }
 
-/* Columns */
-
-.col-1 {
-  width: calc(25% - 14px);
-}
-
-.col-2 {
-  width: calc(50% - 14px);
-}
-
-.col-3 {
-  width: calc(75% - 14px);
-}
-
-.col-4 {
-  width: 100%;
-}
-
 /* Breakpoints */
-
 @media (min-height: 1080px) {
   .row {
     margin-bottom: 32px;

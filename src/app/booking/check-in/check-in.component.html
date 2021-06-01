@@ -1,6 +1,6 @@
-<div class="card">
+<div class="your-stay-wrapper">
   <form>
-    <div class="container your-stay">
+    <section class="container your-stay">
       <div class="form-ctrl">
         <div class="inline-control check-in">
           <label for="checkInDate">Check In</label>
@@ -51,10 +51,10 @@
           </datalist>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="food-service-form-ctrl">
-      <h3>Food service</h3>
+    <section class="food-service-form-ctrl">
+      <h5>Food service</h5>
       <div class="food-service-ctrl-wrapper">
         <span class="food-item">
           <span>
@@ -83,6 +83,17 @@
           </span>
         </span>
       </div>
-    </div>
+    </section>
+
+    <section class="container">
+      <h5>Pickup</h5>
+      <label>
+        <input type="radio" name="pickupType" value="1" /> Yes, sure
+      </label>
+      <label>
+        <input type="radio" name="pickupType" value="0" /> No, I have rented a
+        car
+      </label>
+    </section>
   </form>
 </div>

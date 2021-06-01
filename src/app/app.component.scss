@@ -1,19 +1,28 @@
-.wrapper {
+.card {
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  padding: 0;
   width: 80%;
   margin: auto;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 
-  .left-pane {
-    width: 20%;
-  }
-
-  .main-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-
-    .content {
-      width: 80%;
+  .wrapper {
+    .left-pane {
+      width: 20%;
     }
+
+    .main-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      .content {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .card {
+    width: 100%;
   }
 }

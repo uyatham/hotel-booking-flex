@@ -1,57 +1,65 @@
-.your-stay {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  .form-ctrl {
-    box-sizing: border-box;
-    width: 45%;
-
-    .check-in,
-    .check-out,
-    .room-type,
-    .person {
-      flex: 0 1 calc(33.3% - 32px);
-      width: 100%;
-      margin-bottom: 32px;
-    }
-  }
+h5 {
+  margin-bottom: 5px;
 }
 
-.food-service-form-ctrl {
-  .food-service-ctrl-wrapper {
-    span>* {
-      display: inline-block;
-      padding: 0px;
-      margin: 0;
-    }
+.your-stay-wrapper {
+  padding: 10px;
 
-    .food-item {
-      margin-right: 15px;
-    }
-
-    span>input {
-      margin-right: 4px;
-      position: relative;
-      top: 1px;
-    }
-  }
-}
-
-@media screen and (max-width: 599px) {
   .your-stay {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     .form-ctrl {
-      width: auto;
+      box-sizing: border-box;
+      width: 45%;
+
+      .check-in,
+      .check-out,
+      .room-type,
+      .person {
+        flex: 0 1 calc(33.3% - 32px);
+        width: 100%;
+        margin-bottom: 32px;
+      }
     }
   }
 
-  .cardList>*:not(:last-child) {
-    margin-right: unset;
-    margin-bottom: 32px;
+  .food-service-form-ctrl {
+    .food-service-ctrl-wrapper {
+      span>* {
+        display: inline-block;
+        padding: 0px;
+        margin: 0;
+      }
+
+      .food-item {
+        margin-right: 15px;
+      }
+
+      span>input {
+        margin-right: 4px;
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .your-stay {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .form-ctrl {
+        width: auto;
+      }
+    }
+
+    .cardList>*:not(:last-child) {
+      margin-right: unset;
+      margin-bottom: 32px;
+    }
   }
 }
