@@ -58,5 +58,61 @@
   </div>
 </section>
 <div class="add-guest-action">
-  <button>Add Guest</button>
+  <button (click)="popUp.openModal($event)">Add Guest</button>
 </div>
+<app-popup #popUp>
+  <form>
+    <section class="container popup-wrapper">
+      <div class="form-ctrl">
+        <div class="inline-control first-name">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" />
+        </div>
+      </div>
+
+      <div class="form-ctrl">
+        <div class="inline-control last-name">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" />
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h5>Gender</h5>
+      <label> <input type="radio" name="pickupType" value="M" /> Male </label>
+      <label> <input type="radio" name="pickupType" value="F" /> Female </label>
+    </section>
+
+    <section class="container popup-wrapper">
+      <div class="form-ctrl">
+        <div class="inline-control phone">
+          <label for="phone">Phone</label>
+          <input type="text" name="phone" id="phone" />
+        </div>
+      </div>
+
+      <div class="form-ctrl">
+        <div class="inline-control email">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" />
+        </div>
+      </div>
+      <div class="form-ctrl">
+        <div class="inline-control address">
+          <label for="address">Address</label>
+          <input type="text" name="address" id="address" />
+        </div>
+      </div>
+      <div class="form-ctrl">
+        <div class="inline-control age">
+          <label for="age">Age</label>
+          <input type="text" name="age" id="age" />
+        </div>
+      </div>
+    </section>
+    <section class="buttons-container">
+      <button (click)="saveInfo()">Save</button>
+    </section>
+  </form>
+</app-popup>
