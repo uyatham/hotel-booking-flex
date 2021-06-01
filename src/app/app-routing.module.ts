@@ -3,10 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'room',
     loadChildren: () =>
       import('./booking/booking.module').then((m) => m.BookingModule),
   },
+  {
+    path: 'my-bookings',
+    loadChildren: () =>
+      import('./my-bookings/my-bookings.module').then(
+        (m) => m.MyBookingsModule
+      ),
+  },
+  { path: '**', redirectTo: '/room/check-in' },
 ];
 
 @NgModule({

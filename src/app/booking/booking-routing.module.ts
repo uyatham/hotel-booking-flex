@@ -13,8 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'check-in', component: CheckInComponent },
       { path: 'personal-info', component: PersonalInfoComponent },
-      { path: 'payment', component: PaymentComponent },
-      { path: '**', redirectTo: '/check-in' },
+      { path: 'payment', component: PaymentComponent }
     ],
   },
 ];
