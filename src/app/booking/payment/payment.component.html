@@ -1,1 +1,89 @@
-<p>payment works!</p>
+<div class="payment-wrapper">
+  <section class="container">
+    <h5>Choose payment</h5>
+    <label>
+      <input
+        type="radio"
+        name="paymentType"
+        value="C"
+        checked
+        (change)="selectedPaymentMethod = 'C'"
+      />
+      Credit card
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="paymentType"
+        value="U"
+        (change)="selectedPaymentMethod = 'U'"
+      />
+      UPI payment
+    </label>
+  </section>
+  <section *ngIf="selectedPaymentMethod === 'C'; else upiPayment">
+    <form>
+      <section class="container payment">
+        <div class="form-ctrl">
+          <div class="inline-control card-name">
+            <label for="cardName">Card holder name</label>
+            <input
+              type="text"
+              name="cardName"
+              id="cardName"
+              placeholder="Name"
+            />
+          </div>
+        </div>
+
+        <div class="form-ctrl">
+          <div class="inline-control card-number">
+            <label for="cardNumber">Card number</label>
+            <input
+              type="text"
+              name="cardNumber"
+              id="cardNumber"
+              placeholder="0000-0000-0000-0000"
+            />
+          </div>
+        </div>
+
+        <div class="form-ctrl">
+          <div class="inline-control exp-date">
+            <label for="expDate">Expiration Date</label>
+            <input
+              type="text"
+              name="expDate"
+              id="expDate"
+              placeholder="MM/YY"
+            />
+          </div>
+        </div>
+
+        <div class="form-ctrl">
+          <div class="inline-control cvv">
+            <label for="cvv">CVV</label>
+            <input type="text" name="cvv" id="cvv" placeholder="000" />
+          </div>
+        </div>
+      </section>
+    </form>
+  </section>
+  <ng-template #upiPayment>
+    <form>
+      <section class="container payment">
+        <div class="form-ctrl">
+          <div class="inline-control upi-number">
+            <label for="upiNumber">Enter UPI numberr</label>
+            <input
+              type="text"
+              name="upiNumber"
+              id="upiNumber"
+              placeholder="09876543@bank.io"
+            />
+          </div>
+        </div>
+      </section>
+    </form>
+  </ng-template>
+</div>

@@ -1,0 +1,23 @@
+.payment-wrapper {
+  .payment {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .form-ctrl {
+      box-sizing: border-box;
+      width: 45%;
+
+      .card-name,
+      .card-number,
+      .exp-date,
+      .cvv,
+      .upi-number {
+        flex: 0 1 calc(33.3% - 32px);
+        width: 100%;
+        margin-bottom: 32px;
+      }
+    }
+  }
+}
