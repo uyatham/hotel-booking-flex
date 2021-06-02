@@ -1,4 +1,16 @@
 .payment-wrapper {
+  h5 {
+    margin: 0 0 10px 0;
+  }
+
+  .payment-options {
+    margin-bottom: 15px;
+
+    label {
+      display: inline-block;
+    }
+  }
+
   .payment {
     display: flex;
     flex-direction: row;
@@ -17,6 +29,12 @@
         flex: 0 1 calc(33.3% - 32px);
         width: 100%;
         margin-bottom: 32px;
+      }
+    }
+
+    @media screen and (max-width:599px) {
+      .form-ctrl {
+        width: 100%;
       }
     }
   }

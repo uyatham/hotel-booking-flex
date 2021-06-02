@@ -1,25 +1,27 @@
 <div class="payment-wrapper">
   <section class="container">
     <h5>Choose payment</h5>
-    <label>
-      <input
-        type="radio"
-        name="paymentType"
-        value="C"
-        checked
-        (change)="selectedPaymentMethod = 'C'"
-      />
-      Credit card
-    </label>
-    <label>
-      <input
-        type="radio"
-        name="paymentType"
-        value="U"
-        (change)="selectedPaymentMethod = 'U'"
-      />
-      UPI payment
-    </label>
+    <div class="payment-options">
+      <label>
+        <input
+          type="radio"
+          name="paymentType"
+          value="C"
+          checked
+          (change)="selectedPaymentMethod = 'C'"
+        />
+        Credit card
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="paymentType"
+          value="U"
+          (change)="selectedPaymentMethod = 'U'"
+        />
+        UPI payment
+      </label>
+    </div>
   </section>
   <section *ngIf="selectedPaymentMethod === 'C'; else upiPayment">
     <form>
