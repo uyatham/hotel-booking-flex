@@ -19,7 +19,6 @@
     width: 50%;
     border-radius: 4px;
     margin: auto;
-    padding: 24px;
     background-color: #fff;
     position: relative;
     z-index: 4;
@@ -27,8 +26,6 @@
 
   @media screen and (max-width: 999px) {
     .modal {
-      padding: 10px;
-
       .modal-close {
         top: 2%;
         right: 3%;

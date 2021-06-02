@@ -29,4 +29,34 @@
       padding: 5px 30px;
     }
   }
+
+  .booking-confirm-wrapper {
+    padding: 5px;
+
+    .booking-confim-container {
+      .booking-confirm-title {
+        margin: 0;
+        background-color: #b5b0b0;
+        padding: 10px;
+      }
+
+      .term-n-conditions {
+        padding: 40px 20px 10px 20px;
+
+        h5 {
+          margin: 0 0 15px 0;
+        }
+
+        span {
+          display: inline-block;
+        }
+      }
+
+      .booking-confirm-actions {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+      }
+    }
+  }
 }

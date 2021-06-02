@@ -127,14 +127,3 @@ footer [class*="col-"] {
   display: inline-block;
   text-align: center;
 }
-
-/* Breakpoints */
-@media (min-height: 1080px) {
-  .row {
-    margin-bottom: 32px;
-  }
-
-  main {
-    padding-top: 150px;
-  }
-}
