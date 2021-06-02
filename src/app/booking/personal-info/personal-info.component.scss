@@ -7,6 +7,7 @@
     width: 85%;
     padding: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
 
     .form-ctrl {
       h5 {
@@ -42,31 +43,70 @@
   align-items: center;
 }
 
-.popup-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.add-guest-dialog {
+  .add-guest-form {
+    .add-guest-form-title {
+      margin: 0 0 10px 0;
+    }
 
-  .form-ctrl {
-    box-sizing: border-box;
-    width: 45%;
+    .popup-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
-    .first-name,
-    .last-name,
-    .email,
-    .phone,
-    .age,
-    .address {
-      flex: 0 1 calc(33.3% - 32px);
-      width: 100%;
-      margin-bottom: 32px;
+      .form-ctrl {
+        box-sizing: border-box;
+        width: 45%;
+
+        .form-element {
+          flex: 0 1 calc(33.3% - 32px);
+          width: 100%;
+          margin-bottom: 15px;
+        }
+      }
+
+      @media screen and (max-width: 999px) {
+        .form-ctrl {
+          width: 100%;
+
+          .form-element {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .gender {
+      margin-bottom: 15px;
+
+      h5 {
+        margin: 5px 0 5px 0;
+      }
+
+      label {
+        display: inline-block;
+      }
+    }
+
+    @media screen and (max-width: 999px) {
+      .gender {
+        margin-bottom: 5px;
+
+        h5 {
+          display: inline-block;
+        }
+      }
+    }
+
+    .add-guest-action-container {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        padding: 5px 16px;
+        cursor: pointer;
+      }
     }
   }
-}
-
-.buttons-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
 }

@@ -60,59 +60,65 @@
 <div class="add-guest-action">
   <button (click)="popUp.openModal($event)">Add Guest</button>
 </div>
-<app-popup #popUp>
-  <form>
-    <section class="container popup-wrapper">
-      <div class="form-ctrl">
-        <div class="inline-control first-name">
-          <label for="firstName">First Name</label>
-          <input type="text" name="firstName" id="firstName" />
-        </div>
-      </div>
 
-      <div class="form-ctrl">
-        <div class="inline-control last-name">
-          <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" id="lastName" />
+<app-popup #popUp class="add-guest-dialog">
+  <div class="add-guest-form">
+    <h4 class="add-guest-form-title">Guest info</h4>
+    <form>
+      <section class="container popup-wrapper">
+        <div class="form-ctrl">
+          <div class="inline-control first-name form-element">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" />
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="container">
-      <h5>Gender</h5>
-      <label> <input type="radio" name="pickupType" value="M" /> Male </label>
-      <label> <input type="radio" name="pickupType" value="F" /> Female </label>
-    </section>
+        <div class="form-ctrl">
+          <div class="inline-control last-name form-element">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" />
+          </div>
+        </div>
+      </section>
 
-    <section class="container popup-wrapper">
-      <div class="form-ctrl">
-        <div class="inline-control phone">
-          <label for="phone">Phone</label>
-          <input type="text" name="phone" id="phone" />
-        </div>
-      </div>
+      <section class="container gender">
+        <h5>Gender</h5>
+        <label> <input type="radio" name="pickupType" value="M" /> Male </label>
+        <label>
+          <input type="radio" name="pickupType" value="F" /> Female
+        </label>
+      </section>
 
-      <div class="form-ctrl">
-        <div class="inline-control email">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
+      <section class="container popup-wrapper">
+        <div class="form-ctrl">
+          <div class="inline-control phone form-element">
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" />
+          </div>
         </div>
-      </div>
-      <div class="form-ctrl">
-        <div class="inline-control address">
-          <label for="address">Address</label>
-          <input type="text" name="address" id="address" />
+
+        <div class="form-ctrl">
+          <div class="inline-control email form-element">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" />
+          </div>
         </div>
-      </div>
-      <div class="form-ctrl">
-        <div class="inline-control age">
-          <label for="age">Age</label>
-          <input type="text" name="age" id="age" />
+        <div class="form-ctrl">
+          <div class="inline-control address form-element">
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address" />
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="buttons-container">
-      <button (click)="saveInfo()">Save</button>
-    </section>
-  </form>
+        <div class="form-ctrl">
+          <div class="inline-control age form-element">
+            <label for="age">Age</label>
+            <input type="text" name="age" id="age" />
+          </div>
+        </div>
+      </section>
+      <section class="add-guest-action-container">
+        <button type="button" (click)="saveInfo()">Save</button>
+      </section>
+    </form>
+  </div>
 </app-popup>
