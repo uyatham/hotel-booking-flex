@@ -1,5 +1,8 @@
-<div class="modal" #popUp>
-  <ng-content></ng-content>
+<div class="modal-wrapper" #popUp>
+  <div class="modal">
+    <button class="modal-close" (click)="closeModal()">X</button>
+    <ng-content></ng-content>
+  </div>
 </div>
 
-<div class="modal-overlay" #modelOverlay (click)="closeModal()"></div>
+<div class="modal-overlay" #modelOverlay></div>

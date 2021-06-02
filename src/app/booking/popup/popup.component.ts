@@ -61,7 +61,7 @@ export class PopupComponent implements OnInit {
 
   openModal(element): void {
     this.focusedElementBeforeModal = element;
-    this.popUp.nativeElement.style.display = 'block';
+    this.popUp.nativeElement.style.display = 'flex';
     this.modelOverlay.nativeElement.style.display = 'block';
     this.firstTabStop.focus();
   }
