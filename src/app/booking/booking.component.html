@@ -17,6 +17,36 @@
       <div class="inline-control submit-form next">
         <button type="button" id="submitBtn">Next</button>
       </div>
+
+      <div class="inline-control submit-form next">
+        <button type="button" id="proceedBtn" (click)="popUp.openModal($event)">
+          Proceed
+        </button>
+      </div>
     </section>
+    <app-popup #popUp>
+      <h4>Our reception will approve your reservation in few days</h4>
+      <section>
+        <span class="terms">
+          <span>
+            <input type="checkbox" name="terms" id="terms" />
+          </span>
+          <span>
+            <label for="terms"
+              >I understand that reservatin will be approved by hotel reception
+            </label>
+          </span>
+        </span>
+      </section>
+      <section class="actions-container">
+        <div class="inline-control">
+          <button type="button" id="cancelBtn">Cancel</button>
+        </div>
+
+        <div class="inline-control">
+          <button type="button" id="okBtn">ok</button>
+        </div>
+      </section>
+    </app-popup>
   </main>
 </div>

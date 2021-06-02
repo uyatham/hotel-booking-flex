@@ -29,5 +29,6 @@ const routes: Routes = [
     PersonalInfoComponent,
     PopupComponent,
   ],
+  exports: [PopupComponent],
 })
 export class BookingRoutingModule {}
