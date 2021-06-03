@@ -64,7 +64,7 @@
 <app-popup #popUp class="add-guest-dialog">
   <div class="add-guest-form">
     <h4 class="add-guest-form-title">Guest info</h4>
-    <form>
+    <form [formGroup]="guestForm">
       <section class="container popup-wrapper">
         <div class="form-ctrl">
           <div class="inline-control first-name form-element">

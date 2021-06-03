@@ -1,17 +1,29 @@
 <div class="your-stay-wrapper">
-  <form>
+  <form [formGroup]="checkInForm">
     <section class="container your-stay">
       <div class="form-ctrl">
         <div class="inline-control check-in">
           <label for="checkInDate">Check In</label>
-          <input type="date" name="checkInDate" id="checkInDate" />
+          <input
+            type="date"
+            name="checkInDate"
+            id="checkInDate"
+            [attr.min]="checkInDateConfig.min"
+            formControlName="checkIn"
+          />
         </div>
       </div>
 
       <div class="form-ctrl">
         <div class="inline-control check-out">
           <label for="checkOutDate">Check out</label>
-          <input type="date" name="checkOutDate" id="checkOutDate" />
+          <input
+            type="date"
+            name="checkOutDate"
+            id="checkOutDate"
+            [min]="checkOutDateConfig.min"
+            formControlName="checkOut"
+          />
         </div>
       </div>
 
@@ -24,11 +36,15 @@
             name="roomType"
             id="roomType"
             placeholder="Select room type"
+            formControlName="roomType"
           />
           <datalist id="roomOptions">
-            <option value="2">Standard (2x)</option>
-            <option value="3">Deluxe (3X)</option>
-            <option value="4">Suite (4X)</option>
+            <option
+              *ngFor="let roomOption of roomOptions"
+              [value]="roomOption.value"
+            >
+              {{ roomOption.key }}
+            </option>
           </datalist>
         </div>
       </div>
@@ -42,12 +58,12 @@
             name="person"
             id="person"
             placeholder="Select number of persons"
+            formControlName="numberOfPersons"
           />
           <datalist id="personOptions">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option *ngFor="let person of persons" [value]="person">
+              {{ person }}
+            </option>
           </datalist>
         </div>
       </div>
@@ -56,30 +72,16 @@
     <section class="food-service-form-ctrl">
       <h5>Food service</h5>
       <div class="food-service-ctrl-wrapper">
-        <span class="food-item">
+        <span class="food-item" *ngFor="let foodOption of foodOptions">
           <span>
-            <input type="checkbox" name="breakfast" id="chbxBreakfast" />
+            <input
+              type="checkbox"
+              [name]="foodOption"
+              id="chbx_{{ foodOption }}"
+            />
           </span>
           <span>
-            <label for="chbxBreakfast">Breakfast</label>
-          </span>
-        </span>
-
-        <span class="food-item">
-          <span>
-            <input type="checkbox" name="lunch" id="chbxLunch" />
-          </span>
-          <span>
-            <label for="chbxLunch">Lunch</label>
-          </span>
-        </span>
-
-        <span class="food-item">
-          <span>
-            <input type="checkbox" name="dinner" id="chbxDinner" />
-          </span>
-          <span>
-            <label for="chbxDinner">Dinner</label>
+            <label for="chbx_{{ foodOption }}">{{ foodOption }}</label>
           </span>
         </span>
       </div>
@@ -87,12 +89,10 @@
 
     <section class="container">
       <h5>Pickup</h5>
-      <label>
-        <input type="radio" name="pickupType" value="1" /> Yes, sure
-      </label>
-      <label>
-        <input type="radio" name="pickupType" value="0" /> No, I have rented a
-        car
+      <label *ngFor="let pickUpOption of pickUpOptions">
+        <input type="radio" name="pickupType" [value]="pickUpOption.value" />{{
+          pickUpOption.key
+        }}
       </label>
     </section>
   </form>

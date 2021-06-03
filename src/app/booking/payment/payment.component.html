@@ -24,7 +24,7 @@
     </div>
   </section>
   <section *ngIf="selectedPaymentMethod === 'C'; else upiPayment">
-    <form>
+    <form [formGroup]="paymentForm">
       <section class="container payment">
         <div class="form-ctrl">
           <div class="inline-control card-name">
@@ -72,7 +72,7 @@
     </form>
   </section>
   <ng-template #upiPayment>
-    <form>
+    <form [formGroup]="paymentForm">
       <section class="container payment">
         <div class="form-ctrl">
           <div class="inline-control upi-number">
