@@ -1,6 +1,6 @@
 .my-bookings {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-direction: column;
 
   h4 {
@@ -11,12 +11,23 @@
     list-style-type: none;
 
     .card {
-      width: 85%;
+      min-width: 300px;
+      width: 60%;
       padding: 10px;
       margin-bottom: 10px;
+      margin-left: 0;
       cursor: pointer;
 
       .form-ctrl {
+        .details {
+          h5 {
+            margin-left: 0;
+          }
+
+          display: flex;
+          justify-content: space-between;
+        }
+
         h5 {
           margin: 5px auto 10px auto;
         }

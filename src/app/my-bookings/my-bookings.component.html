@@ -4,11 +4,13 @@
     <li *ngFor="let booking of bookings" tabindex="0">
       <div class="card">
         <div class="form-ctrl">
-          <h5 tabindex="0">{{ booking.hotelName }}</h5>
+          <div class="details">
+            <h5 tabindex="0">{{ booking.hotelName }}</h5>
+            <h5 tabindex="0">{{ booking.guests }} guest(s)</h5>
+          </div>
 
           <div class="location">
-            <label tabindex="0">{{ booking.location }}</label> |
-            <label tabindex="0">{{ booking.guests }}</label>
+            <label tabindex="0">{{ booking.location }}</label>
           </div>
 
           <div class="other-details-ctrl">
