@@ -4,15 +4,32 @@
   .booking-nav {
     ul li {
       display: inline-block;
+      padding: 15px 15px;
 
       a {
-        display: block;
-        text-align: center;
-        padding: 16px;
-        font-size: 14px;
+        color: #3f51b5;
         text-decoration: none;
-        cursor: pointer;
-        color: black;
+        display: inline-block;
+        padding: 0 4px 10px 4px;
+        position: relative;
+      }
+
+      a:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 4px;
+        left: 50%;
+        position: absolute;
+        background: #3f51b5;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+
+      a:hover:after {
+        width: 100%;
+        left: 0;
       }
     }
   }
