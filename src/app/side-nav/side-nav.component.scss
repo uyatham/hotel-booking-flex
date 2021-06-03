@@ -1,18 +1,37 @@
 .side-nav {
   height: 100%;
-  background-color: #cfcde6;
+  background-color: #e6e5ec;
 
   ul li {
-    border-bottom: 1px silver solid;
+    padding: 8px 8px;
 
     a {
       font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-      display: block;
-      padding: 8px 8px;
+      display: inline-block;
+      padding: 0 0 10px 0;
       font-size: 0.9em;
       text-decoration: none;
       cursor: pointer;
-      color: black;
+      color: #3f51b5;
+      position: relative;
+    }
+
+    a:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 3px;
+      left: 50%;
+      position: absolute;
+      background: #3f51b5;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    a:hover:after {
+      width: 100%;
+      left: 0;
     }
   }
 }
