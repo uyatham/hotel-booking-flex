@@ -1,0 +1,50 @@
+.my-bookings {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h4 {
+    margin: 0 0 10px 0;
+  }
+
+  .bookings-container {
+    list-style-type: none;
+
+    .card {
+      width: 85%;
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      .form-ctrl {
+        h5 {
+          margin: 5px auto 10px auto;
+        }
+
+        label {
+          display: inline-block;
+
+          time {
+            color: #000;
+          }
+        }
+
+        .address-ctrl {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          #address p {
+            margin: 0 0 0 10px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      &:hover {
+        box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}
