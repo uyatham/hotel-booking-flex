@@ -20,12 +20,12 @@
 
       .form-ctrl {
         .details {
+          display: flex;
+          justify-content: space-between;
+
           h5 {
             margin-left: 0;
           }
-
-          display: flex;
-          justify-content: space-between;
         }
 
         h5 {
