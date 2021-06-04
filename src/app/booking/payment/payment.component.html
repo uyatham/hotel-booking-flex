@@ -24,7 +24,7 @@
     </div>
   </section>
   <section *ngIf="selectedPaymentMethod === 'C'; else upiPayment">
-    <form [formGroup]="paymentForm">
+    <form [formGroup]="cardPaymentForm">
       <section class="container payment">
         <div class="form-ctrl">
           <div class="inline-control card-name">
@@ -34,6 +34,7 @@
               name="cardName"
               id="cardName"
               placeholder="Name"
+              formControlName="cardName"
             />
           </div>
         </div>
@@ -46,6 +47,7 @@
               name="cardNumber"
               id="cardNumber"
               placeholder="0000-0000-0000-0000"
+              formControlName="cardNumber"
             />
           </div>
         </div>
@@ -58,6 +60,7 @@
               name="expDate"
               id="expDate"
               placeholder="MM/YY"
+              formControlName="expDate"
             />
           </div>
         </div>
@@ -65,14 +68,20 @@
         <div class="form-ctrl">
           <div class="inline-control cvv">
             <label for="cvv">CVV</label>
-            <input type="text" name="cvv" id="cvv" placeholder="000" />
+            <input
+              type="text"
+              name="cvv"
+              id="cvv"
+              placeholder="000"
+              formControlName="cvv"
+            />
           </div>
         </div>
       </section>
     </form>
   </section>
   <ng-template #upiPayment>
-    <form [formGroup]="paymentForm">
+    <form [formGroup]="upiPaymentForm">
       <section class="container payment">
         <div class="form-ctrl">
           <div class="inline-control upi-number">
@@ -82,6 +91,7 @@
               name="upiNumber"
               id="upiNumber"
               placeholder="09876543@bank.io"
+              formControlName="upiNumber"
             />
           </div>
         </div>
@@ -89,3 +99,19 @@
     </form>
   </ng-template>
 </div>
+
+<div class="buttons-container">
+  <div class="inline-control back">
+    <button (click)="goback()">Back</button>
+  </div>
+  <div class="inline-control next">
+    <button (click)="popUp.openModal($event)">Proceed</button>
+  </div>
+</div>
+
+<app-popup #popUp class="booking-confirm-wrapper">
+  <app-confirmation
+    [popupComponentRef]="popUp"
+    (confirmation)="onConfirmation()"
+  ></app-confirmation>
+</app-popup>

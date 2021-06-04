@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddGuestComponent } from './add-guest/add-guest.component';
 import { BookingComponent } from './booking.component';
 import { CheckInComponent } from './check-in/check-in.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PopupComponent } from './popup/popup.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
     AddGuestComponent,
     BookingComponent,
     CheckInComponent,
+    ConfirmationComponent,
     PaymentComponent,
     PersonalInfoComponent,
     PopupComponent,

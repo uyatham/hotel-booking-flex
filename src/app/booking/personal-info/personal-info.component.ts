@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { BookingService } from '../booking.service';
 
-import { Guest } from '../models/guest.model';
+import { Guest } from '../../models/guest.model';
 @Component({
   selector: 'app-personal-info',
   templateUrl: './personal-info.component.html',

@@ -7,9 +7,9 @@ export function clearBrowserStorage(): void {
   localStorage.clear();
 }
 
-export function getLocalStorageValue(key: string): string {
+export function getLocalStorageValue(key: string): any {
   const value = localStorage.getItem(key);
-  return value ? JSON.stringify(value) : null;
+  return value ? JSON.parse(value) : null;
 }
 
 export function setLocalStorageKey(key: string, value: string): void {

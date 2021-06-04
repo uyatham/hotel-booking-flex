@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
-import { Guest } from '../models/guest.model';
+import { Guest } from '../../models/guest.model';
 
 import { PopupComponent } from '../popup/popup.component';
 

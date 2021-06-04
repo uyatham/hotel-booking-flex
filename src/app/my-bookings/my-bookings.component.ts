@@ -1,31 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Booking } from '../models/booking.model';
+
+import { HotelService } from '../services/hotel.service';
 
 @Component({
   selector: 'app-my-bookings',
   templateUrl: './my-bookings.component.html',
-  styleUrls: ['./my-bookings.component.scss']
+  styleUrls: ['./my-bookings.component.scss'],
 })
 export class MyBookingsComponent implements OnInit {
-  constructor() { }
+  constructor(private hotelService: HotelService) {}
 
-  bookings = [
-    {
-      hotelName: 'Hotel Vistara',
-      location: 'Hyderabad',
-      guests: 4,
-      chekinTime: '28th May 2021 11 AM',
-      chekoutTime: '29th May 2021 11 AM',
-    },
-    {
-      hotelName: 'Hotel Novotel',
-      location: 'Vizag',
-      guests: 2,
-      chekinTime: '30th May 2021 11 AM',
-      chekoutTime: '31st May 2021 11 AM',
-    },
-  ];
+  bookings: Booking[];
 
   ngOnInit(): void {
+    this.bookings = this.hotelService.getBookings();
   }
-
 }

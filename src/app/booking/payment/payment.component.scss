@@ -32,10 +32,21 @@
       }
     }
 
-    @media screen and (max-width:599px) {
+    @media screen and (max-width: 599px) {
       .form-ctrl {
         width: 100%;
       }
     }
+  }
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .back > button,
+  .next > button {
+    padding: 5px 30px;
   }
 }

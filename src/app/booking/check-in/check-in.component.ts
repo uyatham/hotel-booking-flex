@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 import * as moment from 'moment';
 
 import { BookingService } from '../booking.service';
-import { CheckIn } from '../models/checkin.model';
+import { CheckIn } from '../../models/checkin.model';
 
 import { checkBoxValidator } from '../utils/checkbox-validator.util';
 @Component({
@@ -33,9 +33,9 @@ export class CheckInComponent implements OnInit {
   };
 
   roomOptions = [
-    { key: 'Standard (2x)', value: 2 },
-    { key: 'Deluxe (3X)', value: 3 },
-    { key: 'Suite (4X)', value: 4 },
+    { key: 'Standard (2x)', value: 'Standard' },
+    { key: 'Deluxe (3X)', value: 'Deluxe' },
+    { key: 'Suite (4X)', value: 'Suite' },
   ];
   persons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   foodOptions = ['Breakfast', 'Lunch', 'Dinner'];

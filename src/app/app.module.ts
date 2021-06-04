@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 
+import { HotelService } from './services/hotel.service';
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SideNavComponent],
   imports: [BrowserModule, AppRoutingModule, FlexLayoutModule],
-  providers: [],
+  providers: [HotelService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
