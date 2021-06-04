@@ -10,6 +10,7 @@
             id="checkInDate"
             [attr.min]="checkInDateConfig.min"
             formControlName="checkIn"
+            (change)="checkInDateChange()"
           />
         </div>
       </div>
@@ -69,31 +70,54 @@
       </div>
     </section>
 
-    <section class="food-service-form-ctrl">
+    <section class="food-service-form-ctrl" formArrayName="typesOfFood">
       <h5>Food service</h5>
       <div class="food-service-ctrl-wrapper">
-        <span class="food-item" *ngFor="let foodOption of foodOptions">
+        <span
+          class="food-item"
+          *ngFor="let control of foodControls; let i = index"
+        >
           <span>
             <input
               type="checkbox"
-              [name]="foodOption"
-              id="chbx_{{ foodOption }}"
+              [name]="foodOptions[i]"
+              id="chbx_{{ foodOptions[i] }}"
+              [formControlName]="i"
+              (change)="onChange(foodOptions[i])"
             />
           </span>
           <span>
-            <label for="chbx_{{ foodOption }}">{{ foodOption }}</label>
+            <label for="chbx_{{ foodOptions[i] }}">{{ foodOptions[i] }}</label>
           </span>
         </span>
       </div>
     </section>
 
-    <section class="container">
-      <h5>Pickup</h5>
-      <label *ngFor="let pickUpOption of pickUpOptions">
-        <input type="radio" name="pickupType" [value]="pickUpOption.value" />{{
-          pickUpOption.key
-        }}
+    <fieldset class="container">
+      <legend>Pickup</legend>
+      <label>
+        <input
+          type="radio"
+          formControlName="pickUp"
+          name="pickUp"
+          value="Y"
+          checked
+        />Yes, Sure
       </label>
+      <label>
+        <input
+          type="radio"
+          formControlName="pickUp"
+          name="pickUp"
+          value="N"
+        />No, I already rented a car
+      </label>
+    </fieldset>
+
+    <section class="buttons-container">
+      <div class="inline-control next">
+        <button (click)="saveCheckInInfo()">Next</button>
+      </div>
     </section>
   </form>
 </div>
