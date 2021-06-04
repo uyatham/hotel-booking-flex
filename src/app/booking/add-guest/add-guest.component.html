@@ -1,0 +1,90 @@
+<div class="add-guest-form">
+  <h4 class="add-guest-form-title">Guest info</h4>
+  <form [formGroup]="guestForm">
+    <section class="container popup-wrapper">
+      <div class="form-ctrl">
+        <div class="inline-control first-name form-element">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            formControlName="firstName"
+          />
+        </div>
+      </div>
+
+      <div class="form-ctrl">
+        <div class="inline-control last-name form-element">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            formControlName="lastName"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="container gender">
+      <h5>Gender</h5>
+      <label>
+        <input type="radio" name="gender" value="M" formControlName="gender" />
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="F" formControlName="gender" />
+        Female
+      </label>
+    </section>
+
+    <section class="container popup-wrapper">
+      <div class="form-ctrl">
+        <div class="inline-control phone form-element">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            formControlName="phone"
+            maxlength="10"
+          />
+        </div>
+      </div>
+
+      <div class="form-ctrl">
+        <div class="inline-control email form-element">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" formControlName="email" />
+        </div>
+      </div>
+      <div class="form-ctrl">
+        <div class="inline-control address form-element">
+          <label for="guestAddress">Address</label>
+          <textarea
+            type="text"
+            name="guestAddress"
+            id="address"
+            formControlName="address"
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-ctrl">
+        <div class="inline-control age form-element">
+          <label for="age">Age</label>
+          <input
+            type="text"
+            name="age"
+            id="age"
+            formControlName="age"
+            maxlength="2"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="add-guest-action-container">
+      <button type="button" (click)="saveInfo()">Save</button>
+    </section>
+  </form>
+</div>

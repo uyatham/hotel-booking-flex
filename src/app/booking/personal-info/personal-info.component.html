@@ -1,57 +1,18 @@
 <section class="guests">
-  <div class="card">
+  <div class="card" *ngFor="let guest of guests">
     <div class="form-ctrl">
-      <h5>Sandeep</h5>
+      <h5>{{ guest.firstName }} {{ guest.lastName }}</h5>
       <div class="age-ctrl">
-        <label>Age: 29</label> |
-        <label>Gender : Male</label>
+        <label>Age: {{ guest.age }}</label> |
+        <label>Gender : {{ guest.gender }}</label>
       </div>
 
       <div class="address-ctrl">
         <label for="address">Address</label>
         <div id="address">
-          <p>
-            Flat# 89
-            <br />
-            Building name
-            <br />
-            Street name
-            <br />
-            City
-            <br />
-            State: Telangana
-            <br />
-            Pincode: 500050
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="form-ctrl">
-      <h5>Abdul</h5>
-      <div class="age-ctrl">
-        <label>Age: 31</label> |
-        <label>Gender : Male</label>
-      </div>
-
-      <div class="address-ctrl">
-        <label for="address">Address</label>
-        <div id="address">
-          <p>
-            Flat# 89
-            <br />
-            Building name
-            <br />
-            Street name
-            <br />
-            City
-            <br />
-            State: Telangana
-            <br />
-            Pincode: 500050
-          </p>
+          <pre>
+           {{ guest.address }}
+          </pre>
         </div>
       </div>
     </div>
@@ -61,64 +22,18 @@
   <button (click)="popUp.openModal($event)">Add Guest</button>
 </div>
 
-<app-popup #popUp class="add-guest-dialog">
-  <div class="add-guest-form">
-    <h4 class="add-guest-form-title">Guest info</h4>
-    <form [formGroup]="guestForm">
-      <section class="container popup-wrapper">
-        <div class="form-ctrl">
-          <div class="inline-control first-name form-element">
-            <label for="firstName">First Name</label>
-            <input type="text" name="firstName" id="firstName" />
-          </div>
-        </div>
-
-        <div class="form-ctrl">
-          <div class="inline-control last-name form-element">
-            <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" id="lastName" />
-          </div>
-        </div>
-      </section>
-
-      <section class="container gender">
-        <h5>Gender</h5>
-        <label> <input type="radio" name="pickupType" value="M" /> Male </label>
-        <label>
-          <input type="radio" name="pickupType" value="F" /> Female
-        </label>
-      </section>
-
-      <section class="container popup-wrapper">
-        <div class="form-ctrl">
-          <div class="inline-control phone form-element">
-            <label for="phone">Phone</label>
-            <input type="text" name="phone" id="phone" />
-          </div>
-        </div>
-
-        <div class="form-ctrl">
-          <div class="inline-control email form-element">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" />
-          </div>
-        </div>
-        <div class="form-ctrl">
-          <div class="inline-control address form-element">
-            <label for="address">Address</label>
-            <input type="text" name="address" id="address" />
-          </div>
-        </div>
-        <div class="form-ctrl">
-          <div class="inline-control age form-element">
-            <label for="age">Age</label>
-            <input type="text" name="age" id="age" />
-          </div>
-        </div>
-      </section>
-      <section class="add-guest-action-container">
-        <button type="button" (click)="saveInfo()">Save</button>
-      </section>
-    </form>
+<div class="buttons-container">
+  <div class="inline-control back">
+    <button (click)="goback()">Back</button>
   </div>
+  <div class="inline-control next">
+    <button (click)="saveGuest()">Next</button>
+  </div>
+</div>
+
+<app-popup #popUp class="add-guest-dialog">
+  <app-add-guest
+    [popupComponentRef]="popUp"
+    (addGuest)="addGuest($event)"
+  ></app-add-guest>
 </app-popup>

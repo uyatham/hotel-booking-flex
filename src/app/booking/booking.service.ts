@@ -3,11 +3,12 @@ import { Injectable } from '@angular/core';
 import { setLocalStorageKey } from './utils/storage.util';
 
 import { CheckIn } from './models/checkin.model';
+import { Guest } from './models/guest.model';
 
 @Injectable()
 export class BookingService {
   checkinInformation: CheckIn;
-  guestsInfo = [];
+  guestsInfo: Guest[];
   paymentInfo = {};
   constructor() {}
 
@@ -20,12 +21,12 @@ export class BookingService {
     return this.checkinInformation;
   }
 
-  saveGuestsInfo(guestsInfo): void {
+  saveGuestsInfo(guestsInfo: Guest[]): void {
     this.guestsInfo = guestsInfo;
     setLocalStorageKey('guest', JSON.stringify(guestsInfo));
   }
 
-  getGuestsInfo(): object {
+  getGuestsInfo(): Guest[] {
     return this.guestsInfo;
   }
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AddGuestComponent } from './add-guest/add-guest.component';
 import { BookingComponent } from './booking.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes)],
   declarations: [
+    AddGuestComponent,
     BookingComponent,
     CheckInComponent,
     PaymentComponent,
