@@ -1,6 +1,6 @@
 <section class="my-bookings">
   <h4>My Bookings</h4>
-  <ul class="bookings-container">
+  <ul class="bookings-container" *ngIf="bookings?.length; else noBookings">
     <li *ngFor="let booking of bookings" tabindex="0">
       <div class="card">
         <div class="form-ctrl">
@@ -12,9 +12,7 @@
           </div>
 
           <div class="room">
-            <label tabindex="0"
-              >Room : {{ booking.checkIn.roomType }}</label
-            >
+            <label tabindex="0">Room : {{ booking.checkIn.roomType }}</label>
           </div>
 
           <div class="other-details-ctrl">
@@ -40,4 +38,7 @@
       </div>
     </li>
   </ul>
+  <ng-template #noBookings>
+    <div class="nobookings-mesg">You have no bookings yet.</div>
+  </ng-template>
 </section>
