@@ -37,7 +37,7 @@ export class CheckInComponent implements OnInit {
     { key: 'Deluxe (3X)', value: 'Deluxe' },
     { key: 'Suite (4X)', value: 'Suite' },
   ];
-  persons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  persons = [1, 2, 3, 4];
   foodOptions = ['Breakfast', 'Lunch', 'Dinner'];
   pickUpOptions = [
     { key: 'Yes, Sure', value: 'Y' },
@@ -48,7 +48,7 @@ export class CheckInComponent implements OnInit {
     private formBuilder: FormBuilder,
     private bookingService: BookingService,
     private route: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.checkInForm = this.formBuilder.group({

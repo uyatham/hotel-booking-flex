@@ -45,8 +45,13 @@
   flex-direction: row;
   justify-content: space-between;
 
-  .back > button,
-  .next > button {
+  .back>button,
+  .next>button {
     padding: 5px 30px;
   }
+}
+
+.booking-confirm-wrapper {
+  padding: 5px;
+  max-width: 460px;
 }
