@@ -17,6 +17,9 @@
       </div>
     </div>
   </div>
+  <div class="empty-guests" *ngIf="guests.length <= 0">
+    <p class="add-guest-msg" tabindex="0">Add atlest one guest to proceed</p>
+  </div>
 </section>
 <div class="add-guest-action">
   <button (click)="popUp.openModal($event)">Add Guest</button>

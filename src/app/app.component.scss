@@ -1,18 +1,18 @@
 .card {
-  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   padding: 0;
   width: 80%;
   margin: auto;
 
   .wrapper {
-    .left-pane {
-      width: 20%;
-    }
-
     .main-container {
       width: 100%;
       display: flex;
       flex-direction: row;
+
+      .left-pane {
+        width: 20%;
+      }
 
       .content {
         width: 80%;
