@@ -3,28 +3,58 @@
     <section class="container your-stay">
       <div class="form-ctrl">
         <div class="inline-control check-in">
-          <label for="checkInDate">Check In</label>
+          <label for="checkIn">Check In</label>
           <input
+            aria-required="true"
+            aria-describedby="checkInErrorMsg"
+            [attr.aria-invalid]="checkInForm.get('checkIn').invalid"
             type="date"
-            name="checkInDate"
-            id="checkInDate"
+            name="checkIn"
+            id="checkIn"
             [attr.min]="checkInDateConfig.min"
             formControlName="checkIn"
             (change)="checkInDateChange()"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            id="checkInErrorMsg"
+            *ngIf="
+              checkInForm.get('checkIn').touched &&
+              checkInForm.get('checkIn').invalid
+            "
+          >
+            Please select check-in date
+          </div>
         </div>
       </div>
 
       <div class="form-ctrl">
         <div class="inline-control check-out">
-          <label for="checkOutDate">Check out</label>
+          <label for="checkOut">Check out</label>
           <input
+            aria-required="true"
+            aria-describedby="checkOutErrorMsg"
+            [attr.aria-invalid]="checkInForm.get('checkOut').invalid"
             type="date"
-            name="checkOutDate"
-            id="checkOutDate"
+            name="checkOut"
+            id="checkOut"
             [min]="checkOutDateConfig.min"
             formControlName="checkOut"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            id="checkOutErrorMsg"
+            *ngIf="
+              checkInForm.get('checkOut').touched &&
+              checkInForm.get('checkOut').invalid
+            "
+          >
+            Please select check-out date
+          </div>
         </div>
       </div>
 
@@ -32,6 +62,9 @@
         <div class="inline-control room-type">
           <label for="roomType">Room type</label>
           <input
+            aria-required="true"
+            aria-describedby="roomTypeError"
+            [attr.aria-invalid]="checkInForm.get('roomType').invalid"
             type="text"
             list="roomOptions"
             name="roomType"
@@ -39,6 +72,18 @@
             placeholder="Select room type"
             formControlName="roomType"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            id="roomTypeError"
+            *ngIf="
+              checkInForm.get('roomType').touched &&
+              checkInForm.get('roomType').invalid
+            "
+          >
+            Please select room type
+          </div>
           <datalist id="roomOptions">
             <option
               *ngFor="let roomOption of roomOptions"
@@ -52,15 +97,30 @@
 
       <div class="form-ctrl">
         <div class="inline-control person">
-          <label for="person">Person</label>
+          <label id="personLabel" for="numberOfPersons">Person</label>
           <input
+            aria-required="true"
+            aria-describedby="personCountError"
+            [attr.aria-invalid]="checkInForm.get('numberOfPersons').invalid"
             type="text"
             list="personOptions"
-            name="person"
-            id="person"
+            name="numberOfPersons"
+            id="numberOfPersons"
             placeholder="Select number of persons"
             formControlName="numberOfPersons"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            id="personCountError"
+            *ngIf="
+              checkInForm.get('numberOfPersons').touched &&
+              checkInForm.get('numberOfPersons').invalid
+            "
+          >
+            Please select number of persons for stay
+          </div>
           <datalist id="personOptions">
             <option *ngFor="let person of persons" [value]="person">
               {{ person }}
@@ -71,7 +131,7 @@
     </section>
 
     <section class="food-service-form-ctrl" formArrayName="typesOfFood">
-      <h5>Food service</h5>
+      <h5 id="foodserviceHeadding">Food service</h5>
       <div class="food-service-ctrl-wrapper">
         <span
           class="food-item"
@@ -79,6 +139,8 @@
         >
           <span>
             <input
+              aria-required="true"
+              [attr.aria-invalid]="checkInForm.get('typesOfFood').invalid"
               type="checkbox"
               [name]="foodOptions[i]"
               id="chbx_{{ foodOptions[i] }}"
@@ -90,13 +152,26 @@
             <label for="chbx_{{ foodOptions[i] }}">{{ foodOptions[i] }}</label>
           </span>
         </span>
+        <div
+          tabindex="0"
+          role="alert"
+          class="error-msg"
+          id="foodServiceError"
+          *ngIf="
+            checkInForm.get('typesOfFood').touched &&
+            checkInForm.get('typesOfFood').invalid
+          "
+        >
+          Please select food a servcie
+        </div>
       </div>
     </section>
 
     <fieldset class="pickup-container">
-      <legend>Pickup</legend>
+      <legend id="pickupLegend">Pickup</legend>
       <label>
         <input
+          aria-required="true"
           type="radio"
           formControlName="pickUp"
           name="pickUp"
@@ -106,12 +181,24 @@
       </label>
       <label>
         <input
+          aria-required="true"
           type="radio"
           formControlName="pickUp"
           name="pickUp"
           value="N"
         />No, I already rented a car
       </label>
+      <div
+        tabindex="0"
+        role="alert"
+        class="error-msg"
+        id="pickUpError"
+        *ngIf="
+          checkInForm.get('pickUp').touched && checkInForm.get('pickUp').invalid
+        "
+      >
+        Please select pickup service type
+      </div>
     </fieldset>
 
     <section class="buttons-container">

@@ -2,6 +2,10 @@ h5 {
   margin-bottom: 5px;
 }
 
+.error-msg {
+  color: #b50000;
+}
+
 .your-stay-wrapper {
   .your-stay {
     display: flex;
@@ -26,7 +30,7 @@ h5 {
 
   .food-service-form-ctrl {
     .food-service-ctrl-wrapper {
-      span > * {
+      span>* {
         display: inline-block;
         padding: 0px;
         margin: 0;
@@ -36,7 +40,7 @@ h5 {
         margin-right: 15px;
       }
 
-      span > input {
+      span>input {
         margin-right: 4px;
         position: relative;
         top: 1px;
@@ -54,7 +58,7 @@ h5 {
     display: flex;
     justify-content: flex-end;
 
-    .next > button {
+    .next>button {
       padding: 5px 30px;
     }
   }
@@ -70,7 +74,7 @@ h5 {
       }
     }
 
-    .cardList > *:not(:last-child) {
+    .cardList>*:not(:last-child) {
       margin-right: unset;
       margin-bottom: 32px;
     }
