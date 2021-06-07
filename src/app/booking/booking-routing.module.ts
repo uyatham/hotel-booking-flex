@@ -16,6 +16,7 @@ const routes: Routes = [
     path: '',
     component: BookingComponent,
     children: [
+      { path: '', redirectTo: 'check-in' },
       { path: 'check-in', component: CheckInComponent },
       { path: 'personal-info', component: PersonalInfoComponent },
       { path: 'payment', component: PaymentComponent },
@@ -36,4 +37,4 @@ const routes: Routes = [
   ],
   exports: [PopupComponent],
 })
-export class BookingRoutingModule {}
+export class BookingRoutingModule { }

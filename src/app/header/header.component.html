@@ -1,18 +1,33 @@
 <div class="header-wrapper">
   <header class="app-title">
-    <h3>Hotel</h3>
+    <h2>Hotel</h2>
   </header>
-  <nav class="nav">
-    <ul>
-      <li>
-        <a href="#">Contact us</a>
-      </li>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Help</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="nav-container">
+    <nav class="nav">
+      <ul>
+        <li>
+          <a routerLink="/room" routerLinkActive="active-link">Room booking</a>
+        </li>
+        <li>
+          <a routerLink="/my-bookings" routerLinkActive="active-link"
+            >My Bookings</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="#">Contact us</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Help</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
