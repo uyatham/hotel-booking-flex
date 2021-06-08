@@ -67,8 +67,18 @@
       }
     }
   }
+}
 
-  @media screen and (max-width:599px) {
+@media screen and (max-width:599px) {
+  .header-wrapper {
+    display: block;
+
+    .app-title {
+      h2 {
+        text-align: left;
+      }
+    }
+
     .nav-container {
       display: block;
 
@@ -80,16 +90,6 @@
           padding-top: 0;
         }
       }
-    }
-  }
-}
-
-@media screen and (max-width: 599px) {
-  .header-wrapper {
-    display: block;
-
-    h2 {
-      text-align: left;
     }
   }
 }
