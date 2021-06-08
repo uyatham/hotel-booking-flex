@@ -127,7 +127,7 @@
     </section>
 
     <section class="food-service-form-ctrl" formArrayName="typesOfFood">
-      <h5 id="food-service">Food service</h5>
+      <label id="food-service">Food service</label>
       <div class="food-service-ctrl-wrapper">
         <span
           class="food-item"
@@ -144,7 +144,9 @@
             />
           </span>
           <span>
-            <label for="chbx_{{ foodOptions[i] }}">{{ foodOptions[i] }}</label>
+            <label class="form-ctrl-lbl" for="chbx_{{ foodOptions[i] }}">
+              {{ foodOptions[i] }}</label
+            >
           </span>
         </span>
         <div
@@ -163,8 +165,10 @@
     </section>
 
     <fieldset class="pickup-container">
-      <legend id="pick-up">Pickup</legend>
-      <label>
+      <legend id="pick-up">
+        <label for="pickUp">Pickup</label>
+      </legend>
+      <label class="form-ctrl-lbl">
         <input
           aria-required="true"
           type="radio"
@@ -174,7 +178,7 @@
           checked
         />Yes, Sure
       </label>
-      <label>
+      <label class="form-ctrl-lbl">
         <input
           aria-required="true"
           type="radio"
