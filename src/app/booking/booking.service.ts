@@ -9,6 +9,8 @@ export class BookingService {
   checkinInformation: CheckIn;
   guestsInfo: Guest[];
   paymentInfo: Payment;
+  isCheckinFormValid: boolean;
+  isGuestFormValid: boolean;
   constructor() {}
 
   saveCheckinInformation(checkinInfo: CheckIn): void {
@@ -30,5 +32,7 @@ export class BookingService {
   clearBookingInfo(): void {
     this.checkinInformation = null;
     this.guestsInfo = null;
+    this.isCheckinFormValid = false;
+    this.isGuestFormValid = false;
   }
 }

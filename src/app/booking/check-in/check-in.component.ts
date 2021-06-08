@@ -48,7 +48,7 @@ export class CheckInComponent implements OnInit {
     private formBuilder: FormBuilder,
     private bookingService: BookingService,
     private route: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.checkInForm = this.formBuilder.group({
@@ -129,6 +129,7 @@ export class CheckInComponent implements OnInit {
         roomType,
         typesOfFood: this.selectedFoodOptions,
       };
+      this.bookingService.isCheckinFormValid = true;
       this.bookingService.saveCheckinInformation(checkInFormInfo);
       this.route.navigate(['/room/personal-info']);
     }

@@ -28,6 +28,7 @@ export class PersonalInfoComponent implements OnInit {
     this.router.navigate(['/room/check-in']);
   }
   saveGuest(): void {
+    this.bookingService.isGuestFormValid = true;
     this.bookingService.saveGuestsInfo(this.guests);
     this.router.navigate(['/room/payment']);
   }

@@ -177,7 +177,7 @@
   <div class="inline-control next">
     <button
       (click)="popUp.openModal($event)"
-      [disabled]="cardPaymentForm.invalid || upiPaymentForm.invalid"
+      [disabled]="!(cardPaymentForm.valid || upiPaymentForm.valid)"
     >
       Proceed
     </button>
