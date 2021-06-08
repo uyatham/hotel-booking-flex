@@ -11,7 +11,7 @@ body {
   padding: 0;
   height: 100%;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  background-color: #d3d3d3;
+  background-color: #737373;
 }
 
 ul {
@@ -54,11 +54,11 @@ h2 {
 }
 
 /* Strip out display: inline-block whitespace */
-.row > * {
+.row>* {
   margin-left: -4px;
 }
 
-.row > *:first-child {
+.row>*:first-child {
   margin-left: 0;
 }
 
