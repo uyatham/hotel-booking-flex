@@ -4,87 +4,199 @@
     <section class="container popup-wrapper">
       <div class="form-ctrl">
         <div class="inline-control first-name form-element">
-          <label for="firstName">First Name</label>
+          <label id="first-name" for="firstName">First Name</label>
           <input
+            aria-required="true"
+            [attr.aria-invalid]="guestForm.get('firstName').invalid"
             type="text"
             name="firstName"
             id="firstName"
             formControlName="firstName"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            aria-describedby="first-name"
+            *ngIf="
+              guestForm.get('firstName').touched &&
+              guestForm.get('firstName').invalid
+            "
+          >
+            Please enter first name
+          </div>
         </div>
       </div>
 
       <div class="form-ctrl">
         <div class="inline-control last-name form-element">
-          <label for="lastName">Last Name</label>
+          <label id="last-name" for="lastName">Last Name</label>
           <input
+            aria-required="true"
+            [attr.aria-invalid]="guestForm.get('lastName').invalid"
             type="text"
             name="lastName"
             id="lastName"
             formControlName="lastName"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            aria-describedby="last-name"
+            *ngIf="
+              guestForm.get('lastName').touched &&
+              guestForm.get('lastName').invalid
+            "
+          >
+            Please enter last name
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="container gender">
-      <h5>Gender</h5>
+    <fieldset class="container gender">
+      <legend id="gender">Gender</legend>
       <label>
-        <input type="radio" name="gender" value="M" formControlName="gender" />
+        <input
+          aria-required="true"
+          [attr.aria-invalid]="guestForm.get('gender').invalid"
+          type="radio"
+          name="gender"
+          value="M"
+          formControlName="gender"
+        />
         Male
       </label>
       <label>
-        <input type="radio" name="gender" value="F" formControlName="gender" />
+        <input
+          aria-required="true"
+          [attr.aria-invalid]="guestForm.get('gender').invalid"
+          type="radio"
+          name="gender"
+          value="F"
+          formControlName="gender"
+        />
         Female
       </label>
-    </section>
+      <div
+        tabindex="0"
+        role="alert"
+        class="error-msg"
+        aria-describedby="gender"
+        *ngIf="
+          guestForm.get('gender').touched && guestForm.get('gender').invalid
+        "
+      >
+        Please select gender
+      </div>
+    </fieldset>
 
     <section class="container popup-wrapper">
       <div class="form-ctrl">
         <div class="inline-control phone form-element">
-          <label for="phone">Phone</label>
+          <label id="phone-number" for="phone">Phone</label>
           <input
-            type="text"
+            aria-required="true"
+            [attr.aria-invalid]="guestForm.get('phone').invalid"
+            type="tel"
             name="phone"
             id="phone"
             formControlName="phone"
             maxlength="10"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            aria-describedby="phone-number"
+            *ngIf="
+              guestForm.get('phone').touched && guestForm.get('phone').invalid
+            "
+          >
+            Please enter phone number
+          </div>
         </div>
       </div>
 
       <div class="form-ctrl">
         <div class="inline-control email form-element">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" formControlName="email" />
+          <label id="email-label" for="email">Email</label>
+          <input
+            aria-required="true"
+            [attr.aria-invalid]="guestForm.get('email').invalid"
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+          />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            aria-describedby="email-label"
+            *ngIf="
+              guestForm.get('email').touched && guestForm.get('email').invalid
+            "
+          >
+            Please enter email address
+          </div>
         </div>
       </div>
       <div class="form-ctrl">
         <div class="inline-control address form-element">
-          <label for="guestAddress">Address</label>
+          <label id="address-label" for="guestAddress">Address</label>
           <textarea
+            aria-required="true"
+            [attr.aria-invalid]="guestForm.get('address').invalid"
             type="text"
             name="guestAddress"
             id="guestAddress"
             formControlName="address"
           ></textarea>
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            aria-describedby="address-label"
+            *ngIf="
+              guestForm.get('address').touched &&
+              guestForm.get('address').invalid
+            "
+          >
+            Please enter address
+          </div>
         </div>
       </div>
       <div class="form-ctrl">
         <div class="inline-control age form-element">
-          <label for="age">Age</label>
+          <label id="age-label" for="age">Age</label>
           <input
-            type="text"
+            aria-required="true"
+            [attr.aria-invalid]="guestForm.get('age').invalid"
+            type="number"
             name="age"
             id="age"
             formControlName="age"
-            maxlength="2"
+            min="0"
+            max="99"
           />
+          <div
+            tabindex="0"
+            role="alert"
+            class="error-msg"
+            aria-describedby="age-label"
+            *ngIf="guestForm.get('age').touched && guestForm.get('age').invalid"
+          >
+            Please enter age
+          </div>
         </div>
       </div>
     </section>
     <section class="add-guest-action-container">
-      <button type="button" (click)="saveInfo()">Save</button>
+      <button type="button" (click)="saveInfo()" [disabled]="guestForm.invalid">
+        Save
+      </button>
     </section>
   </form>
 </div>

@@ -30,7 +30,7 @@
     <button (click)="goback()">Back</button>
   </div>
   <div class="inline-control next">
-    <button (click)="saveGuest()">Next</button>
+    <button (click)="saveGuest()" [disabled]="guests.length <= 0">Next</button>
   </div>
 </div>
 
