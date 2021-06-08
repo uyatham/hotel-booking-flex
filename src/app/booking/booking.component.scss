@@ -44,6 +44,16 @@
     }
   }
 
+  @media screen and (max-width:599px) {
+    .booking-nav {
+      ul li {
+        display: block;
+        padding-top: 0;
+        padding-left: 0;
+      }
+    }
+  }
+
   .form-container {
     padding: 10px;
   }

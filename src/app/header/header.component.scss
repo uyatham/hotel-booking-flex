@@ -68,4 +68,28 @@
     }
   }
 
+  @media screen and (max-width:599px) {
+    .nav-container {
+      display: block;
+
+      .nav {
+        display: inherit;
+
+        ul li {
+          display: inherit;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .header-wrapper {
+    display: block;
+
+    h2 {
+      text-align: left;
+    }
+  }
 }
