@@ -28,75 +28,145 @@
       <section class="container payment">
         <div class="form-ctrl">
           <div class="inline-control card-name">
-            <label for="cardName">Card holder name</label>
+            <label id="card-name" for="cardName">Card holder name</label>
             <input
+              aria-required="true"
+              [attr.aria-invalid]="cardPaymentForm.get('cardName').invalid"
               type="text"
               name="cardName"
               id="cardName"
               placeholder="Name"
               formControlName="cardName"
             />
+            <div
+              tabindex="0"
+              role="alert"
+              class="error-msg"
+              aria-describedby="card-name"
+              *ngIf="
+                cardPaymentForm.get('cardName').touched &&
+                cardPaymentForm.get('cardName').invalid
+              "
+            >
+              Please enter card holder name
+            </div>
           </div>
         </div>
 
         <div class="form-ctrl">
           <div class="inline-control card-number">
-            <label for="cardNumber">Card number</label>
+            <label id="card-number" for="cardNumber">Card number</label>
             <input
+              aria-required="true"
+              [attr.aria-invalid]="cardPaymentForm.get('cardNumber').invalid"
               type="text"
               name="cardNumber"
               id="cardNumber"
               placeholder="0000-0000-0000-0000"
               formControlName="cardNumber"
             />
+            <div
+              tabindex="0"
+              role="alert"
+              class="error-msg"
+              aria-describedby="card-number"
+              *ngIf="
+                cardPaymentForm.get('cardNumber').touched &&
+                cardPaymentForm.get('cardNumber').invalid
+              "
+            >
+              Please enter card number
+            </div>
           </div>
         </div>
 
         <div class="form-ctrl">
           <div class="inline-control exp-date">
-            <label for="expDate">Expiration Date</label>
+            <label id="exp-date" for="expDate">Expiration Date</label>
             <input
+              aria-required="true"
+              [attr.aria-invalid]="cardPaymentForm.get('expDate').invalid"
               type="text"
               name="expDate"
               id="expDate"
               placeholder="MM/YY"
               formControlName="expDate"
             />
+            <div
+              tabindex="0"
+              role="alert"
+              class="error-msg"
+              aria-describedby="exp-date"
+              *ngIf="
+                cardPaymentForm.get('expDate').touched &&
+                cardPaymentForm.get('expDate').invalid
+              "
+            >
+              Please enter expiration date
+            </div>
           </div>
         </div>
 
         <div class="form-ctrl">
           <div class="inline-control cvv">
-            <label for="cvv">CVV</label>
+            <label id="cvv-label" for="cvv">CVV</label>
             <input
+              aria-required="true"
+              [attr.aria-invalid]="cardPaymentForm.get('cvv').invalid"
               type="text"
               name="cvv"
               id="cvv"
               placeholder="000"
               formControlName="cvv"
             />
+            <div
+              tabindex="0"
+              role="alert"
+              class="error-msg"
+              aria-describedby="cvv-label"
+              *ngIf="
+                cardPaymentForm.get('cvv').touched &&
+                cardPaymentForm.get('cvv').invalid
+              "
+            >
+              Please enter cvv
+            </div>
           </div>
         </div>
       </section>
     </form>
   </section>
   <ng-template #upiPayment>
-    <form [formGroup]="upiPaymentForm">
-      <section class="container payment">
+    <section class="container payment">
+      <form [formGroup]="upiPaymentForm">
         <div class="form-ctrl">
           <div class="inline-control upi-number">
-            <label for="upiNumber">Enter UPI numberr</label>
+            <label id="upi-number" for="upiNumber">Enter UPI number</label>
             <input
+              aria-required="true"
+              [attr.aria-invalid]="upiPaymentForm.get('upiNumber').invalid"
               type="text"
               name="upiNumber"
               id="upiNumber"
               placeholder="09876543@bank.io"
               formControlName="upiNumber"
             />
+            <div
+              tabindex="0"
+              role="alert"
+              class="error-msg"
+              aria-describedby="upi-number"
+              *ngIf="
+                upiPaymentForm.get('upiNumber').touched &&
+                upiPaymentForm.get('upiNumber').invalid
+              "
+            >
+              Please enter upi number
+            </div>
           </div>
         </div>
-      </section>
-    </form>
+      </form>
+    </section>
   </ng-template>
 </div>
 
@@ -105,7 +175,12 @@
     <button (click)="goback()">Back</button>
   </div>
   <div class="inline-control next">
-    <button (click)="popUp.openModal($event)">Proceed</button>
+    <button
+      (click)="popUp.openModal($event)"
+      [disabled]="cardPaymentForm.invalid || upiPaymentForm.invalid"
+    >
+      Proceed
+    </button>
   </div>
 </div>
 
