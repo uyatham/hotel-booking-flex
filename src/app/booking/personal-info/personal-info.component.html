@@ -1,33 +1,35 @@
 <section class="guests">
-  <div class="card" *ngFor="let guest of guests">
-    <div class="form-ctrl">
-      <h5>{{ guest.firstName }} {{ guest.lastName }}</h5>
-      <div class="age-ctrl">
-        <label>Age: {{ guest.age }}</label> |
-        <label>Gender : {{ guest.gender }}</label>
-      </div>
+  <div *ngIf="guests?.length > 0; else noGuests">
+    <div class="card" *ngFor="let guest of guests">
+      <div class="form-ctrl">
+        <h5>{{ guest.firstName }} {{ guest.lastName }}</h5>
+        <div class="age-ctrl">
+          <label>Age: {{ guest.age }}</label> |
+          <label>Gender : {{ guest.gender }}</label>
+        </div>
 
-      <div class="address-ctrl">
-        <label for="address">Address</label>
-        <div id="address">
-          <pre>
-           {{ guest.address }}
-          </pre>
+        <div class="address-ctrl">
+          <label for="address">Address</label>
+          <div id="address">
+            <pre>
+             {{ guest.address }}
+            </pre>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="empty-guests" *ngIf="guests.length <= 0">
-    <p class="add-guest-msg" tabindex="0">Add atlest one guest to proceed</p>
-  </div>
+  <ng-template #noGuests class="empty-guests">
+    <p class="no-guests-msg" tabindex="0">Add guest(s) to proceed</p>
+  </ng-template>
 </section>
-<div class="add-guest-action">
-  <button (click)="popUp.openModal($event)">Add Guest</button>
-</div>
 
 <div class="buttons-container">
   <div class="inline-control back">
     <button (click)="goback()">Back</button>
+  </div>
+  <div class="inline-control add-guest-action">
+    <button (click)="popUp.openModal($event)">Add Guest</button>
   </div>
   <div class="inline-control next">
     <button (click)="saveGuest()" [disabled]="guests.length <= 0">Next</button>

@@ -35,6 +35,14 @@
       box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
     }
   }
+
+  .no-guests-msg {
+    margin-top: 0px;
+    margin-bottom: 190px;
+    align-items: center;
+    padding: 0 0 0 10px;
+    font-size: 0.9em;
+  }
 }
 
 .add-guest-action {
@@ -42,33 +50,20 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+
   button {
     padding: 5px 30px;
   }
 }
 
 .buttons-container {
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  .back > button,
-  .next > button {
+  .back>button,
+  .next>button {
     padding: 5px 30px;
-  }
-}
-
-.empty-guests {
-  border: 1px solid #c7c2c2;
-  background: #fff;
-  margin-bottom: 10px;
-  min-height: 100px;
-  border-radius: 10px;
-  margin: 30px 0px;
-  .add-guest-msg {
-    align-items: center;
-    /* margin: 100px; */
-    padding: 30px;
-    font-size: 1em;
   }
 }
