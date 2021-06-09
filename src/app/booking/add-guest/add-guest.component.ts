@@ -29,15 +29,7 @@ export class AddGuestComponent {
   saveInfo(): void {
     if (this.guestForm.valid) {
       this.addGuest.emit(this.guestForm.value);
-      this.guestForm.patchValue({
-        firstName: '',
-        lastName: '',
-        gender: '',
-        phone: '',
-        email: '',
-        address: '',
-        age: '',
-      });
+      this.guestForm.reset();
       this.popupComponentRef.closeModal();
     }
   }
