@@ -5,6 +5,7 @@
 
   .card {
     width: 85%;
+    min-width: 380px;
     padding: 10px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -24,9 +25,10 @@
         justify-content: flex-start;
         align-items: flex-start;
 
-        #address p {
+        #address pre {
           margin: 0 0 0 10px;
           font-size: 12px;
+          white-space: pre-line;
         }
       }
     }
