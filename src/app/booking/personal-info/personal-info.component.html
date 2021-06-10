@@ -1,5 +1,5 @@
 <section class="guests">
-  <div *ngIf="guests?.length > 0; else noGuests">
+  <div *ngIf="guests?.length; else noGuests">
     <div class="card" *ngFor="let guest of guests">
       <div class="form-ctrl">
         <h5>{{ guest.firstName }} {{ guest.lastName }}</h5>
@@ -19,8 +19,10 @@
       </div>
     </div>
   </div>
-  <ng-template #noGuests class="empty-guests">
-    <p class="no-guests-msg" tabindex="0">Add guest(s) to proceed</p>
+  <ng-template #noGuests>
+    <div class="empty-guests">
+      <p class="no-guests-msg" tabindex="0">Add guest(s) to proceed</p>
+    </div>
   </ng-template>
 </section>
 

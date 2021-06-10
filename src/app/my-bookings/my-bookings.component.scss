@@ -61,7 +61,17 @@
   }
 
   .nobookings-mesg {
-    padding-top: 10px;
     font-size: 14px;
+  }
+
+  .empty-bookings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 2px dotted #3f51b5;
+    background-color: #d8e8c042;
+    margin: 30px;
+    border-radius: 20px;
   }
 }
